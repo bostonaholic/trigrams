@@ -1,0 +1,53 @@
+HOW TO:
+1. run the tests:
+
+  $ rspec spec/
+
+TECHNICAL DESIGN DECISIONS:
+First, I started out with the TrigramAnalyzer. I knew this would take in a
+String and would need to return a Hash to represent the trigram patterns. In
+order to build the hash, I would need a list of strings that represented 3
+word trigrams. Then I could build the hash using the first two words as the
+key and the third word adding to the list of values for the given key.
+
+I decided to extend the String class with a function `trigrams` which would
+return a list of 3 word trigrams. In an effort to build code that is
+reusable, I implemented the function `n_grams` to allow a caller to specify
+the size of the N-gram.
+
+`n_grams` was a bit more difficult than I had anticipated. Simply slicing a
+string into n-sized parts wouldn't do.  Each chunk (or slice) needed to be
+congruent to the previous i.e. sharing n-1 elements, moving along the list by
+one, not the size of the slice.
+
+Next was TrigramGenerator.  This would take the trigram patterns built from
+TrigramAnalyzer and would cycle them to generate the new text.  No real magic
+here, just simply followed the instructions from the kata description.
+
+  1. Start with a random word pair (our hash keys in this case).
+  2. Lookup a random word from it's value and append to our new text.
+  3. Continue while the last two words exist as a key in our trigram patterns.
+
+I implemented Array.random_element instead of using `sample` because it is
+not in ruby 1.8.7 and I wanted my code to be compatible with both versions.
+
+BUSINESS DESIGN DECISIONS:
+Both the TrigramAnalyzer and the TrigramGenerator can process single or
+multiple sentences. Ideally, one could pass an entire book of text to
+TrigramAnalyzer.analyze_text, it will then parse into sentences, then will
+generate the trigrams from each individual sentence. This will eliminate
+generating trigrams which cross sentence and paragraph boundries.
+
+Then, pass these patterns to TrigramGenerator.generate_text passing it the
+number of paragraphs to generate and the number of sentences each paragraph
+will contain.
+
+TODO: Next steps to be taken
+1. Deal with inner-sentence punctuation like, commas, quotes, colons,
+semicolons, parentheses, etc.
+2. Finding keys case insensitive.
+3. Generate random number of sentences up to given number, not all paragraphs
+should have exactly n sentences.
+4. Figure out how to kill an infinite loop. Have a MAX_WORDS which doesn't
+allow a sentence to cycle indefinitely?
+
