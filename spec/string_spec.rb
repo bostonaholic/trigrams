@@ -97,6 +97,6 @@ describe String do
     'This is a sentence. This is too.
 
     This is a new paragraphs.  An a new sentence for the paragraph.'.paragraphs.should be == ['This is a sentence. This is too.',
-                                                                                                   'This is a new paragraphs.  An a new sentence for the paragraph.']
+                                                                                              'This is a new paragraphs.  An a new sentence for the paragraph.']
   end
 end
