@@ -127,5 +127,5 @@ Your mountain is waiting.
 So... get on your way!"
 
 patterns = TrigramAnalyzer.analyze_text(text)
-new_text = TrigramGenerator.new.generate_text(patterns)
+new_text = TrigramGenerator.generate_text(patterns)
 puts new_text
