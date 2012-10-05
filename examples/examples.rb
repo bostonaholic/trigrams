@@ -19,7 +19,7 @@ The airship could be launched either by starting it along the ground, on rubber-
 
 The gas test, which took place a few days later, showed that the young inventor and Mr. Sharp had made no mistake this time. No explosion followed, the needle valve controlling the powerful vapor perfectly."
 
-patterns = TrigramAnalyzer.new.analyze_text(text)
+patterns = TrigramAnalyzer.analyze_text(text)
 new_text = TrigramGenerator.new.generate_text(patterns)
 puts new_text
 
