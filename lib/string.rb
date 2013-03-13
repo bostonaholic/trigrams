@@ -1,5 +1,4 @@
 class String
-
   def words
     self.remove_end_punctuation.split(' ')
   end
@@ -21,7 +20,7 @@ class String
   end
 
   def n_grams(n = 1)
-    words.congruent_chunks(n).map do |chunk|
+    words.adjacent_chunks(n).map do |chunk|
       chunk.join(' ')
     end
   end
