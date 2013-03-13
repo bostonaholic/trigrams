@@ -6,8 +6,4 @@ class Array
       chunk if chunk.length == size
     end.compact
   end
-
-  def random_element
-    self[rand(self.size)]
-  end
 end

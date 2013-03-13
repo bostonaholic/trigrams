@@ -17,7 +17,7 @@ class TrigramGenerator
   def self.generate_sentence(patterns)
     new_text = patterns.random_key
     begin
-      new_text = "#{new_text} #{patterns[new_text.last_two_words].random_element}"
+      new_text = "#{new_text} #{patterns[new_text.last_two_words].sample}"
     end while patterns.include?(new_text.last_two_words)
     "#{new_text.capitalize_first_word}."
   end
