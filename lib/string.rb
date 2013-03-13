@@ -1,5 +1,3 @@
-require 'array'
-
 class String
 
   def words
