@@ -1,9 +1,9 @@
 require 'string'
+require 'sentences'
 
 class TrigramAnalyzer
-
   def self.analyze_text(text, patterns = {})
-    text.sentences.each do |sentence|
+    Sentences.find(text).each do |sentence|
       analyze_sentence(sentence, patterns)
     end
     patterns

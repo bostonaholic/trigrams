@@ -72,27 +72,6 @@ describe String do
     end
   end
 
-  context 'parsing sentences' do
-    it 'returns a list of sentences' do
-      'This is a sentence.  This is too.'.sentences.should be == ['This is a sentence', 'This is too']
-    end
-
-    it 'returns a list of sentences with different punctuation' do
-      'This is a sentence.  Is this a sentence? It is!'.sentences.should be == ['This is a sentence',
-                                                                                'Is this a sentence',
-                                                                                'It is']
-    end
-
-    it 'returns a list of sentences for multiple paragraphs' do
-      'This is a sentence.  This is too.
-
-      This is a new paragraph.  And another sentence.'.sentences.should be == ['This is a sentence',
-                                                                               'This is too',
-                                                                               'This is a new paragraph',
-                                                                               'And another sentence']
-    end
-  end
-
   it 'returns a list of paragraphs' do
     'This is a sentence. This is too.
 

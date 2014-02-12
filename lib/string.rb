@@ -37,10 +37,6 @@ class String
     self.sub(/[.?!]\s*?$/, '')
   end
 
-  def sentences
-    self.split(/[.?!(\n+)](?=\s+|$)/).reject(&:empty?).each { |it| it.strip! }
-  end
-
   def paragraphs
     self.split(/\n+/).each { |it| it.strip! }
   end
