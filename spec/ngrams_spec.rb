@@ -11,14 +11,4 @@ describe Ngrams do
       Ngrams.find('I wish I').should be == ['I', 'wish', 'I']
     end
   end
-
-  describe '#words' do
-    it 'returns the words of a phrase' do
-      Ngrams.words('dog cat bird').should be == ['dog', 'cat', 'bird']
-    end
-
-    it 'does not include the ending punctuation' do
-      Ngrams.words('dog cat bird.').should be == ['dog', 'cat', 'bird']
-    end
-  end
 end

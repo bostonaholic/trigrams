@@ -2,6 +2,16 @@ require 'rspec'
 require 'words'
 
 describe Words do
+  describe '#find' do
+    it 'returns the words of a phrase' do
+      Words.find('dog cat bird').should be == ['dog', 'cat', 'bird']
+    end
+
+    it 'does not include the ending punctuation' do
+      Words.find('dog cat bird.').should be == ['dog', 'cat', 'bird']
+    end
+  end
+
   describe '#word' do
     it 'returns a specific word of a phrase' do
       Words.word('dog cat bird', 2).should be == 'cat'
