@@ -1,5 +1,5 @@
-require 'string'
 require 'sentences'
+require 'trigrams'
 
 class TrigramAnalyzer
   def self.analyze_text(text, patterns = {})
@@ -10,11 +10,10 @@ class TrigramAnalyzer
   end
 
   def self.analyze_sentence(sentence, patterns = {})
-    sentence.trigrams.each do |trigram|
+    Trigrams.find(sentence).each do |trigram|
       patterns[trigram.first_two_words] ||= []
       patterns[trigram.first_two_words] << trigram.third_word
     end
     patterns
   end
 end
-
