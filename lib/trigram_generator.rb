@@ -3,7 +3,6 @@ require 'formatter'
 require 'words'
 
 class TrigramGenerator
-
   def self.generate_text(patterns, number_of_paragraphs = 1, number_of_sentences = 1)
     number_of_paragraphs.times.map do
       generate_paragraph(patterns, number_of_sentences)

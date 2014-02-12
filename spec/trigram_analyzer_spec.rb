@@ -1,5 +1,5 @@
-require 'trigram_analyzer'
 require 'rspec'
+require 'trigram_analyzer'
 
 describe TrigramAnalyzer do
   context 'analyzing a single sentence' do

@@ -1,5 +1,5 @@
-require 'ngrams'
 require 'rspec'
+require 'ngrams'
 
 describe Ngrams do
   describe '#find' do

@@ -1,5 +1,5 @@
-require 'sentences'
 require 'rspec'
+require 'sentences'
 
 describe Sentences do
   describe '#find' do

@@ -1,5 +1,5 @@
-require 'paragraphs'
 require 'rspec'
+require 'paragraphs'
 
 describe Paragraphs do
   describe '#find' do

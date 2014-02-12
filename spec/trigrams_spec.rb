@@ -1,5 +1,5 @@
-require 'trigrams'
 require 'rspec'
+require 'trigrams'
 
 describe Trigrams do
   describe '#find' do

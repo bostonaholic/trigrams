@@ -1,5 +1,5 @@
-require 'words'
 require 'rspec'
+require 'words'
 
 describe Words do
   describe '#word' do

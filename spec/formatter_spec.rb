@@ -1,5 +1,5 @@
-require 'formatter'
 require 'rspec'
+require 'formatter'
 
 describe Formatter do
   describe '#capitalize_first_word' do
