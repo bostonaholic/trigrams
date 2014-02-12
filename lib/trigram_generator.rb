@@ -1,4 +1,5 @@
 require 'hash'
+require 'formatter'
 
 class TrigramGenerator
 
@@ -19,7 +20,7 @@ class TrigramGenerator
     begin
       new_text = "#{new_text} #{patterns[new_text.last_two_words].sample}"
     end while patterns.include?(new_text.last_two_words)
-    "#{new_text.capitalize_first_word}."
+    "#{Formatter.capitalize_first_word(new_text)}."
   end
 end
 

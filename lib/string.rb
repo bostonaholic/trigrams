@@ -17,10 +17,6 @@ class String
     word(3)
   end
 
-  def capitalize_first_word
-    self[0].upcase + self.slice(1..self.size)
-  end
-
   def paragraphs
     self.split(/\n+/).each { |it| it.strip! }
   end

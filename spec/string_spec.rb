@@ -22,10 +22,6 @@ describe String do
     'dog cat bird'.third_word.should be == 'bird'
   end
 
-  it 'capitalizes only the first word' do
-    'dog cat Bird'.capitalize_first_word.should be == 'Dog cat Bird'
-  end
-
   it 'returns a list of paragraphs' do
     'This is a sentence. This is too.
 

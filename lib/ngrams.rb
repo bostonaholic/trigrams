@@ -1,5 +1,6 @@
 require 'string'
 require 'array'
+require 'formatter'
 
 class Ngrams
   def self.find(text, n=1)
@@ -9,10 +10,6 @@ class Ngrams
   end
 
   def self.words(text)
-    remove_end_punctuation(text).split(' ')
-  end
-
-  def self.remove_end_punctuation(text)
-    text.sub(/[.?!]\s*?$/, '')
+    Formatter.remove_end_punctuation(text).split(' ')
   end
 end
