@@ -1,4 +1,3 @@
-require 'string'
 require 'array'
 require 'formatter'
 

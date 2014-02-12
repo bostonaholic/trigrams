@@ -1,5 +1,6 @@
-require 'trigram_generator'
 require 'rspec'
+require 'trigram_generator'
+require 'words'
 
 describe TrigramGenerator do
   context 'generating a single sentence' do
@@ -9,12 +10,12 @@ describe TrigramGenerator do
                   'may I'  => ['wish'],
                   'I may'  => ['I']}
       # "I might" is the only pattern which will kill the cycle
-      TrigramGenerator.generate_sentence(patterns).last_two_words.should be == 'I might'
+      Words.last_two(TrigramGenerator.generate_sentence(patterns)).should be == 'I might'
     end
 
     it 'capitalizes the first word' do
       patterns = {'wish I' => ['may', 'might']}
-      TrigramGenerator.generate_sentence(patterns).word(1).should be == 'Wish'
+      Words.word(TrigramGenerator.generate_sentence(patterns)).should be == 'Wish'
     end
 
     it 'adds a period' do

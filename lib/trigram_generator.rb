@@ -1,5 +1,6 @@
 require 'hash'
 require 'formatter'
+require 'words'
 
 class TrigramGenerator
 
@@ -18,8 +19,8 @@ class TrigramGenerator
   def self.generate_sentence(patterns)
     new_text = patterns.random_key
     begin
-      new_text = "#{new_text} #{patterns[new_text.last_two_words].sample}"
-    end while patterns.include?(new_text.last_two_words)
+      new_text = "#{new_text} #{patterns[Words.last_two(new_text)].sample}"
+    end while patterns.include?(Words.last_two(new_text))
     "#{Formatter.capitalize_first_word(new_text)}."
   end
 end
