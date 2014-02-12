@@ -1,9 +1,9 @@
-require 'array'
+require 'adjacent_chunks'
 require 'formatter'
 
 class Ngrams
   def self.find(text, n=1)
-    words(text).adjacent_chunks(n).map do |chunk|
+    AdjacentChunks.find(words(text), n).map do |chunk|
       chunk.join(' ')
     end
   end
