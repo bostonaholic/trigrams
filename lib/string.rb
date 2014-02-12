@@ -16,8 +16,4 @@ class String
   def third_word
     word(3)
   end
-
-  def paragraphs
-    self.split(/\n+/).each { |it| it.strip! }
-  end
 end

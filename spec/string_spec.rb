@@ -21,11 +21,4 @@ describe String do
   it 'returns the third word of a phrase' do
     'dog cat bird'.third_word.should be == 'bird'
   end
-
-  it 'returns a list of paragraphs' do
-    'This is a sentence. This is too.
-
-    This is a new paragraphs.  An a new sentence for the paragraph.'.paragraphs.should be == ['This is a sentence. This is too.',
-                                                                                              'This is a new paragraphs.  An a new sentence for the paragraph.']
-  end
 end
