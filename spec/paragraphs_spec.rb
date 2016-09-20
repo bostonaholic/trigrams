@@ -6,8 +6,8 @@ describe Paragraphs do
     it 'returns a list of paragraphs' do
       Paragraphs.find('This is a sentence. This is too.
 
-      This is a new paragraphs.  An a new sentence for the paragraph.').should be == ['This is a sentence. This is too.',
-                                                                                                'This is a new paragraphs.  An a new sentence for the paragraph.']
+      This is a new paragraph.  An a new sentence for the paragraph.').should ==
+      ['This is a sentence. This is too.', 'This is a new paragraph.  An a new sentence for the paragraph.']
     end
   end
 end
